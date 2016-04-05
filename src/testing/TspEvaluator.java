@@ -19,11 +19,11 @@ import java.util.stream.Stream;
  *
  * @author dee
  */
-public class Evaluator implements ChromosomeEvaluator {
+public class TspEvaluator implements ChromosomeEvaluator {
 
     public double[][] readFile() {
         double[][] x = new double[2][2];
-        String fileName = "test.tsp";
+        String fileName = "data\\test.tsp";
         List<String> list = new ArrayList<>();
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
 

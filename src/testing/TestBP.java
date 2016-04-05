@@ -17,11 +17,12 @@ public class TestBP {
     public static void main(String[] args) {
 
         try {
-            int[] numNeuron = {7,7};
-            BackProp bp = new BackProp(numNeuron, 5000);
+            int[] hiddenNeuron = {7,7,7};
+            BackProp model = new BackProp(hiddenNeuron, 500);
+            model.setlR(0.01);
 
-            double[][] input = FileIO.readFileDouble("train.txt");
-            double[][] target = FileIO.readFileDouble("test2.txt");
+            double[][] input = FileIO.readFileDouble("data\\train.txt");
+            double[][] target = FileIO.readFileDouble("data\\test2.txt");
 
 //        double[][] input = {
 //            {1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1},
@@ -34,12 +35,14 @@ public class TestBP {
 //            {1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1}
 //        };
 //            double[][] target = {{1}, {0}, {1}, {0}, {1}, {0}, {1}, {0}};
-            bp.train(input, target, input, target);
+            
+            
+            model.train(input, target, input, target);
 
             double[] test;
             double [][] output = target.clone();
             for (int i = 0; i < input.length; i++) {
-                test = bp.test(input[i]);
+                test = model.test(input[i]);
                 output[i] = test;
                 for (int j = 0; j < test.length; j++) {
                     System.out.print(test[j] + " ");
@@ -47,10 +50,10 @@ public class TestBP {
                 System.out.println("");
             }
             
-            System.out.println(bp.accuracy(output, target)/output.length*100+"%");
+            System.out.println(model.accuracy(output, target)/output.length*100+"%");
             System.out.println("==================================");
             for (int i = 0; i < input.length; i++) {
-                test = bp.testFlexible(input[i]);
+                test = model.testFlexible(input[i]);
                 output[i] = test;
                 for (int j = 0; j < test.length; j++) {
                     System.out.print(test[j] + " ");
@@ -58,7 +61,7 @@ public class TestBP {
                 System.out.println("");
             }
             
-            System.out.println(bp.accuracy(output, target)/output.length*100+"%");
+            System.out.println(model.accuracy(output, target)/output.length*100+"%");
 
         } catch (Exception ex) {
             ex.printStackTrace();
