@@ -17,7 +17,7 @@ public class TestBP {
     public static void main(String[] args) {
 
         try {
-            int[] hiddenNeuron = {7,7,7};
+            int[] hiddenNeuron = {7, 7, 7};
             BackProp model = new BackProp(hiddenNeuron, 500);
             model.setlR(0.01);
 
@@ -35,12 +35,10 @@ public class TestBP {
 //            {1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1}
 //        };
 //            double[][] target = {{1}, {0}, {1}, {0}, {1}, {0}, {1}, {0}};
-            
-            
             model.train(input, target, input, target);
 
             double[] test;
-            double [][] output = target.clone();
+            double[][] output = target.clone();
             for (int i = 0; i < input.length; i++) {
                 test = model.test(input[i]);
                 output[i] = test;
@@ -49,8 +47,8 @@ public class TestBP {
                 }
                 System.out.println("");
             }
-            
-            System.out.println(model.accuracy(output, target)/output.length*100+"%");
+
+            System.out.println(model.accuracy(output, target) * 100 + "%");
             System.out.println("==================================");
             for (int i = 0; i < input.length; i++) {
                 test = model.testFlexible(input[i]);
@@ -60,8 +58,8 @@ public class TestBP {
                 }
                 System.out.println("");
             }
-            
-            System.out.println(model.accuracy(output, target)/output.length*100+"%");
+
+            System.out.println(model.accuracy(output, target) * 100 + "%");
 
         } catch (Exception ex) {
             ex.printStackTrace();
