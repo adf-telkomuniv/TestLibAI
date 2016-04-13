@@ -7,18 +7,18 @@ package testing;
 
 import ga.GeneticAlgorithm;
 import ga.OperatorOptions;
-import ga.Settings;
+import ga.GaSettings;
 
 /**
  *
  * @author dee
  */
-public class TestGA {
+public class TestGa {
 
     public static void main(String[] args) {
 
         try {
-            Settings settings = new Settings(31, 1000, 300);
+            GaSettings settings = new GaSettings(31, 1000, 300);
             OperatorOptions operations = new OperatorOptions(3, 6, 6, 0, 1);
             GeneticAlgorithm ga = new GeneticAlgorithm(settings, operations);
             settings.setThresholdFitness(1000);
