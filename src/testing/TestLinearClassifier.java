@@ -5,15 +5,16 @@
  */
 package testing;
 
-import misc.SimLinearClassifier;
+import misc.AiLcGui;
 
 /**
  *
  * @author dee
  */
 public class TestLinearClassifier {
+
     public static void main(String[] args) {
-        SimLinearClassifier sim = new SimLinearClassifier();
+        AiLcGui sim = new AiLcGui();
         sim.setVisible(true);
     }
 }

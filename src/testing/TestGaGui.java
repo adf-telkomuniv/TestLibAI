@@ -14,6 +14,5 @@ import misc.AiGaGui;
 public class TestGaGui {
     public static void main(String[] args) {
         AiGaGui a = new AiGaGui();
-        
     }
 }
