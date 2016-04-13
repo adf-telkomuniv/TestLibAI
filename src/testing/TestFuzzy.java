@@ -23,7 +23,7 @@ public class TestFuzzy {
     public static void main(String[] args) {
 
         Fuzzy f = new Fuzzy();
-        Input suhu = new Input(5);
+        Input suhu = new Input();
         suhu.setMembership(0, new Membership("Cold", new double[]{-100, -10, 0, 3}));
         suhu.setMembership(1, new Membership("Cool", new double[]{0, 3, 12, 15}));
         suhu.setMembership(2, new Membership("Normal", new double[]{12, 15, 24, 27}));
@@ -31,7 +31,7 @@ public class TestFuzzy {
         suhu.setMembership(4, new Membership("Hot", new double[]{36, 39, 50, 100}));
         f.addInput(suhu);
 
-        Input kelembaban = new Input(3);
+        Input kelembaban = new Input();
         kelembaban.setMembership(0, new Membership("Dry", new double[]{-100, 0, 10, 20}));
         kelembaban.setMembership(1, new Membership("Moist", new double[]{10, 20, 40, 50}));
         kelembaban.setMembership(2, new Membership("Wet", new double[]{40, 50, 70, 100}));
@@ -50,7 +50,7 @@ public class TestFuzzy {
         System.out.println("===============");
         f.setRules(rules);
 
-        MamdaniOutput out1 = new MamdaniOutput(3, 10);
+        MamdaniOutput out1 = new MamdaniOutput(10);
         out1.setMembership(0, new Membership("Short", new double[]{0, 0, 20, 28}));
         out1.setMembership(1, new Membership("Medium", new double[]{20, 28, 40, 48}));
         out1.setMembership(2, new Membership("Long", new double[]{40, 48, 90, 90}));
