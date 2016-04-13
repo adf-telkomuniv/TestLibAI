@@ -3,8 +3,6 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package testing;
-
 import ga.ChromosomeEvaluator;
 import ga.chromosome.*;
 import java.io.IOException;
