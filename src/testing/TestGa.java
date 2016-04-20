@@ -22,11 +22,15 @@ public class TestGa {
             OperatorOptions operations = new OperatorOptions(3, 6, 6, 0, 1);
             GeneticAlgorithm ga = new GeneticAlgorithm(settings, operations);
             settings.setThresholdFitness(1000);
+            
             TspEvaluator ev = new TspEvaluator();
             ga.optimize(ev);
+            
             System.out.println(ga.getBestFitness());
             System.out.println(ga.getBestIndv());
             System.out.println(ev.evaluate2(ga.getBestIndv()));
+            
+            
         } catch (Exception e) {
             e.printStackTrace();
         }

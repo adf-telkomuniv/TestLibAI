@@ -23,23 +23,12 @@ public class TestBP {
 
             double[][] input = FileIO.readFileDouble("data\\train.txt");
             double[][] target = FileIO.readFileDouble("data\\test2.txt");
-
-//        double[][] input = {
-//            {1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1},
-//            {1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1},
-//            {1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1},
-//            {1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 1, 1, 1, 1},
-//            {1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1},
-//            {1, 1, 1, 1, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1},
-//            {1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 1, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1},
-//            {1, 1, 1, 1, 1, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 1, 1, 1}
-//        };
-//            double[][] target = {{1}, {0}, {1}, {0}, {1}, {0}, {1}, {0}};
             model.train(input, target, input, target);
 
             double[] test;
             double[][] output = target.clone();
             for (int i = 0; i < input.length; i++) {
+                //
                 test = model.test(input[i]);
                 output[i] = test;
                 for (int j = 0; j < test.length; j++) {
