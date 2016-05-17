@@ -9,7 +9,6 @@ import fuzzy.Fuzzy;
 import fuzzy.FuzzyValue;
 import fuzzy.Input;
 import fuzzy.MamdaniOutput;
-import fuzzy.Membership;
 import fuzzy.Rule;
 import fuzzy.Rules;
 import fuzzy.SugenoOutput;

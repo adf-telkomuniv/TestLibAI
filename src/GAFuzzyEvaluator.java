@@ -5,7 +5,6 @@ import fuzzy.MamdaniOutput;
 import fuzzy.Rules;
 import ga.ChromosomeEvaluator;
 import ga.chromosome.Chromosome;
-import ga.chromosome.IntegerChromosome;
 import ga.chromosome.RealChromosome;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -41,8 +40,7 @@ public class GAFuzzyEvaluator implements ChromosomeEvaluator {
 
     public double[][] readFile() {
         double[][] x = new double[2][2];
-//        String fileName = "data\\dataFuzzy.txt";
-        String fileName = "C:\\Users\\dee\\Documents\\GitHub\\TestLibAI\\data\\dataFuzzy.txt";
+        String fileName = "data\\dataFuzzy.txt";
         List<String> list = new ArrayList<>();
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
 

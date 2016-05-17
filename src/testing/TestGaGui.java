@@ -5,9 +5,6 @@
  */
 package testing;
 
-import ga.GaSettings;
-import ga.GeneticAlgorithm;
-import ga.OperatorOptions;
 import misc.AiGaGui;
 
 /**
@@ -17,22 +14,6 @@ import misc.AiGaGui;
 public class TestGaGui {
 
     public static void main(String[] args) {
-//        AiGaGui a = new AiGaGui();
-        try {
-//            GaSettings settings = new GaSettings(24, 100, 300, 10, 90);
-//            OperatorOptions operations = new OperatorOptions(1, 1, 1);
-            GaSettings settings = new GaSettings(24, 300, 300);
-            OperatorOptions operations = new OperatorOptions(2, 3, 4);
-            GeneticAlgorithm ga = new GeneticAlgorithm(settings, operations);
-            settings.setThresholdFitness(1000);
-            GAFuzzyEvaluator ev = new GAFuzzyEvaluator();
-//            GA ev = new GA();
-            ga.optimize(ev);
-            System.out.println(ga.getBestFitness());
-            System.out.println(ga.getBestIndv());
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+        AiGaGui a = new AiGaGui();
     }
 }

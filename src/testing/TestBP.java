@@ -21,8 +21,8 @@ public class TestBP {
             BackProp model = new BackProp(hiddenNeuron, 500);
             model.setlR(0.01);
 
-            double[][] input = FileIO.readFileDouble("data\\train.txt");
-            double[][] target = FileIO.readFileDouble("data\\test2.txt");
+            double[][] input = FileIO.readFileDouble("data\\BPTrain.txt");
+            double[][] target = FileIO.readFileDouble("data\\BPTarget.txt");
             model.train(input, target, input, target);
 
             double[] test;
@@ -31,10 +31,10 @@ public class TestBP {
                 //
                 test = model.test(input[i]);
                 output[i] = test;
-                for (int j = 0; j < test.length; j++) {
-                    System.out.print(test[j] + " ");
-                }
-                System.out.println("");
+//                for (int j = 0; j < test.length; j++) {
+//                    System.out.print(test[j] + " ");
+//                }
+//                System.out.println("");
             }
 
             System.out.println(model.accuracy(output, target) * 100 + "%");

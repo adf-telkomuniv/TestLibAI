@@ -23,8 +23,7 @@ public class TspEvaluator implements ChromosomeEvaluator {
 
     public double[][] readFile() {
         double[][] x = new double[2][2];
-//        String fileName = "data\\test.tsp";
-        String fileName = "C:\\Users\\dee\\Documents\\GitHub\\TestLibAI\\data\\test.tsp";
+        String fileName = "data\\GAtest.tsp";
         List<String> list = new ArrayList<>();
         try (Stream<String> stream = Files.lines(Paths.get(fileName))) {
 
