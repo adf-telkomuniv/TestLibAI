@@ -21,7 +21,7 @@ public class TestGSP {
         try {
             // TODO code application logic here
             GSP g = new GSP();
-            g.start("data\\current2.txt", "data\\goal2.txt");
+            g.start("data\\current_A.txt", "data\\goal_A.txt",0);
         } catch (IOException ex) {
             ex.printStackTrace();
         }
