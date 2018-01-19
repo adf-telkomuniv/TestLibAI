@@ -21,7 +21,11 @@ public class TestGSP {
         try {
             // TODO code application logic here
             GSP g = new GSP();
+<<<<<<< HEAD
             g.start("data\\current_A.txt", "data\\goal_A.txt",0);
+=======
+            g.start("data\\GSPcurrent2.txt", "data\\GSPgoal2a.txt");
+>>>>>>> 238582deebbe27e2f38666a24b2bae999527cad0
         } catch (IOException ex) {
             ex.printStackTrace();
         }
